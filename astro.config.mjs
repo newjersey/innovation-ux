@@ -1,20 +1,34 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightLinksValidator from 'starlight-links-validator'
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://newjersey.github.io',
+	base: "/innovation-design",
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			plugins: [starlightLinksValidator()],
+			title: 'NJIA Design',
+			customCss: [
+				// Fontsource files for to regular, semi-bold, and bold font weights.
+				"@fontsource/public-sans/latin.css",
+				"@fontsource/public-sans/latin-italic.css",
+				"./src/styles/custom.css",
+			],
+			components: {
+				MarkdownContent: './src/components/MarkdownContent.astro',
+			},
+			lastUpdated: true,
+			editLink: {
+				baseUrl: 'https://github.com/newjersey/innovation-design/edit/main/',
+			},
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/newjersey/innovation-design' }],
 			sidebar: [
 				{
 					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					autogenerate: { directory: 'guides' },
 				},
 				{
 					label: 'Reference',
