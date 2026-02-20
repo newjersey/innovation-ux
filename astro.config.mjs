@@ -12,9 +12,6 @@ export default defineConfig({
 			plugins: [starlightLinksValidator()],
 			title: 'NJIA Design',
 			customCss: [
-				// Fontsource files for to regular, semi-bold, and bold font weights.
-				"@fontsource/public-sans/latin.css",
-				"@fontsource/public-sans/latin-italic.css",
 				"./src/styles/custom.css",
 			],
 			components: {
