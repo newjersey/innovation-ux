@@ -14,9 +14,6 @@ export default defineConfig({
 			customCss: [
 				"./src/styles/custom.css",
 			],
-			components: {
-				MarkdownContent: './src/components/MarkdownContent.astro',
-			},
 			lastUpdated: true,
 			editLink: {
 				baseUrl: 'https://github.com/newjersey/innovation-design/edit/main/',
