@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightLinksValidator from 'starlight-links-validator'
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +8,6 @@ export default defineConfig({
 	base: "/innovation-design",
 	integrations: [
 		starlight({
-			plugins: [starlightLinksValidator()],
 			title: 'NJIA Design',
 			customCss: [
 				"./src/styles/custom.css",
@@ -27,6 +25,10 @@ export default defineConfig({
 				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
+				},
+				{
+					label: 'Research',
+					autogenerate: { directory: 'research' },
 				},
 			],
 		}),
