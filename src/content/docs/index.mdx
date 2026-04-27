@@ -12,7 +12,7 @@ hero:
       variant: primary
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Card, LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 ## Why design principles?
 
