@@ -46,5 +46,5 @@ Our design principles are the foundation for everything we build. They help new 
 <LinkCard
   title="Research Methods"
   description="Learn about our qualitative and quantitative research approaches."
-  href="/research/"
+  href="https://newjersey.github.io/innovation-design/research/index.md"
 />
