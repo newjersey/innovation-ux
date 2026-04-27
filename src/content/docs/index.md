@@ -7,7 +7,7 @@ hero:
   tagline: How we work, what we value, and how we make decisions as a design team at the New Jersey Innovation Authority.
   actions:
     - text: Research Methods
-      link: /research/
+      link: https://newjersey.github.io/innovation-design/research/index.md
       icon: right-arrow
       variant: primary
 ---
