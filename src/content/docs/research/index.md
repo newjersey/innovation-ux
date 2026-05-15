@@ -1,13 +1,15 @@
 ---
 title: User Research
 description: How we conduct ethical, inclusive, and trauma-informed research at the New Jersey Innovation Authority.
----
-
 import { Card, CardGrid, LinkCard, Aside, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+---
 
 Research is how we make sure that the products, services, and policies we create truly work for the people of New Jersey. It grounds our decisions in the lived experiences of real users — not assumptions or internal perspectives.
 
 When we listen to people, we gain insight into what matters most to them, what challenges they face, and how government services can better meet their needs. This work helps us design better systems and builds trust by showing that residents' voices guide the process.
+
+<Tabs>
+  <TabItem label="Overview">
 
 ---
 
@@ -47,6 +49,10 @@ Every team member and vendor must complete all three courses before conducting r
 - [Trauma-Informed UI Research: Giving Care to the Participant and the Researcher](https://www.youtube.com/watch?v=xl2uVJir_80) — video, 47 minutes, by Zariah Cameron
 - [Vulnerable Populations in Patient-Centered Outcomes Research and Clinical Care](https://phlearnlink.nwcphp.org/enrol/index.php?id=271) — online course, 1 hour
 - [Understanding Types of Risk in Research](https://research.virginia.edu/irb-sbs/defining-risk) — University of Virginia guide, 10 minutes
+
+  </TabItem>
+
+  <TabItem label="Plan">
 
 ---
 
@@ -276,6 +282,10 @@ Every research project must be reviewed before it begins. This protects particip
 A director review can stand in for both peer review and Design Director approval. Allow at least **one business day**. Do not reschedule participant interviews if avoidable.
 </Aside>
 
+  </TabItem>
+
+  <TabItem label="Run research">
+
 ---
 
 ## Recruiting participants
@@ -435,6 +445,10 @@ Acknowledge that others may be on the call, then reassure the participant: *"You
 - Ask if they'd be open to participating in future research
 - Share next steps — how findings may be used or when they might hear from you
 
+  </TabItem>
+
+  <TabItem label="Share findings">
+
 ---
 
 ## Synthesizing research
@@ -561,6 +575,9 @@ Keep all presentations and reports screen-reader friendly. Use clear, high-contr
     - Use participant language to keep findings authentic
     - Tailor the format (summary, deck, map) to your audience
     - Make reports accessible — clear visuals, alt text, plain language
+  </TabItem>
+</Tabs>
+
   </TabItem>
 </Tabs>
 
