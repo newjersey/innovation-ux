@@ -4,47 +4,87 @@ description: The home for how we work, what we value, and how we make decisions 
 template: splash
 hero:
   title: NJIA Design Practice
-  tagline: How we work, what we value, and how we make decisions as a design team at the New Jersey Innovation Authority.
+  tagline: A practice wiki for writing, designing, and delivering state services with clarity, equity, and consistency.
   actions:
-    - text: Research Methods
+    - text: Research methods
       link: research/
       icon: right-arrow
       variant: primary
+    - text: How we work
+      link: how-we-work/content-design-language-access/
+      icon: right-arrow
 ---
 
 import { Card, LinkCard, CardGrid } from '@astrojs/starlight/components';
 
-## Why design principles?
+## What this wiki is for
 
-Our design principles are the foundation for everything we build. They help new team members understand how we work, give us a shared language with partners and stakeholders, and give us something concrete to refer back to when tough calls need to be made on a project.
+This site is our single place for design practice at NJIA. It explains how we approach research, content, design systems, enablement, and leadership so the teams we support can move faster with more confidence and better outcomes.
 
-## Our principles
+## What we believe
 
 <CardGrid stagger>
-  <Card title="Inclusive and accessible" icon="star">
-    We prioritize people who have historically lacked access to services — in how we choose projects and how we execute them. Regardless of language, device access, economic status, ability, location, age, or digital literacy, New Jerseyans should be able to access, understand, and participate in government services.
+  <Card title="Design for everyone" icon="heart">
+    Good government services work for every New Jerseyan — regardless of device, language, ability, or familiarity with digital tools.
   </Card>
-  <Card title="Simplicity and standardization" icon="list-format">
-    We champion plain language, ease of use, and seamless access to services. We value standardization over reinventing the wheel and look for opportunities to systematize improvements so the whole organization benefits.
+  <Card title="Write with clarity" icon="document">
+    We choose plain language and clear structure so people can find, understand, and act on information without extra friction.
   </Card>
-  <Card title="Build with, not for" icon="open-book">
-    We learn from and co-create with the people who live and work in New Jersey — early and often. We use both qualitative and quantitative research methods to understand deeply and broadly how people engage with government services.
+  <Card title="Build in public" icon="comment-alt">
+    Shared documentation, open collaboration, and visible decisions help teams stay aligned and make stronger products faster.
   </Card>
-  <Card title="Iterate and collaborate" icon="puzzle">
-    Product development is a team sport. We involve teammates and stakeholders as early as possible, starting simple — sketches, then wireframes, then full designs — collecting feedback from real users at every stage, including after release.
+  <Card title="Use evidence, not opinion" icon="magnifier">
+    Research and data guide our choices. We speak to people, test ideas, and learn continuously from real service users.
   </Card>
-  <Card title="Measure twice, cut once" icon="approve-check-circle">
-    Speed means nothing if something isn't used, and solving one problem while creating another isn't success. We deliver incremental solutions in a timely way, but always consider them in context. We think in systems to ensure our work is relevant, feasible, viable, scalable, and sustainable.
+  <Card title="Make systems matter" icon="puzzle">
+    We design components, patterns, and workflows that work across teams and services, not just on one page.
   </Card>
-  <Card title="Elevate and coach" icon="rocket">
-    Within our team, we hold a high bar for design excellence. With partners, we meet them where they are and bring them into the design process — building shared capability across the organization over time.
+  <Card title="Support our partners" icon="approve-check-circle">
+    We coach, enable, and partner with teammates so they can own and sustain great service experiences over time.
   </Card>
 </CardGrid>
 
-## Explore the wiki
+## How we work
 
-<LinkCard
-  title="Research Methods"
-  description="Learn about our qualitative and quantitative research approaches."
-  href="research/"
-/>
+<CardGrid columns={3} stagger>
+  <LinkCard
+    title="Research"
+    description="Learn how we conduct interviews, usability work, and evidence-based service discovery."
+    href="research/"
+    icon="magnifier"
+  />
+  <LinkCard
+    title="Content Design & Language Access"
+    description="Soon: frameworks for plain language, translations, and accessible communications."
+    href="how-we-work/content-design-language-access/"
+    icon="document"
+  />
+  <LinkCard
+    title="Design"
+    description="Soon: our approach to interfaces, interaction, and service design."
+    href="how-we-work/design/"
+    icon="laptop"
+  />
+  <LinkCard
+    title="NJWDS"
+    description="Soon: the New Jersey Web Design System and how we use it to keep services consistent."
+    href="how-we-work/njwds/"
+    icon="list-format"
+  />
+  <LinkCard
+    title="Enablement"
+    description="Soon: training, templates, and guidance for scaling design practice across teams."
+    href="how-we-work/enablement/"
+    icon="approve-check-circle"
+  />
+  <LinkCard
+    title="Leadership"
+    description="Soon: how our team leads with strategy, trust, and shared decision-making."
+    href="how-we-work/leadership/"
+    icon="rocket"
+  />
+</CardGrid>
+
+## Stay connected
+
+A single navigation point for research, design practice, and system guidance keeps our work easier to find and easier to use. This wiki is a living document — updated as our process, tools, and team evolve.
