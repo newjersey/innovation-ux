@@ -8,7 +8,7 @@ export default defineConfig({
 	base: "/innovation-design",
 	integrations: [
 		starlight({
-			title: 'NJIA Design',
+			title: 'NJIA UX',
 			customCss: [
 				"./src/styles/custom.css",
 			],
@@ -41,10 +41,10 @@ export default defineConfig({
 				{
 					label: 'How we work',
 					items: [
-	                        { label: 'Overview', link: '/how-we-work/overview/' },
+						{ label: 'Overview', link: '/how-we-work/overview/' },
 						{ label: 'Content Design & Language Access', link: '/how-we-work/content-design-language-access/' },
 						{ label: 'Design', link: '/how-we-work/design/' },
-						{ label: 'NJWDS', link: '/how-we-work/njwds/' },
+						{ label: 'Grove', link: '/how-we-work/grove/' },
 						{ label: 'Enablement', link: '/how-we-work/enablement/' },
 						{ label: 'Leadership', link: '/how-we-work/leadership/' },
 					],
