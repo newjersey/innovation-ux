@@ -3,7 +3,7 @@ title: Research Planning
 description: Research planning session with the question, approach, and resources needed to make better decisions.
 ---
 
-import { Aside, Steps, Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Aside, Steps, Tabs, TabItem, Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 # Plan your research
 
@@ -317,6 +317,281 @@ AI is powerful for identifying questions or opportunities you might have missed.
 - Be used without participant knowledge or consent
 
 AI is a tool that makes research more efficient. It doesn't make research better on its own—you do.
+
+---
+
+## Research Data Security Practices for HIPAA
+
+User research on healthcare projects requires additional security measures to protect participant privacy and comply with HIPAA regulations. These practices apply when Protected Health Information (PHI) may be collected or disclosed. When in doubt, use the state laptop.
+
+### Core Principles
+
+<CardGrid>
+  <Card title="Minimize data collection" icon="approve-check-circle">
+    Design studies to avoid collecting Protected Health Information (PHI). Use proxies (CBOs, social workers, healthcare providers) instead of patients when possible.
+  </Card>
+  <Card title="De-identify by default" icon="information">
+    Replace names with participant codes (P1, P2, P3) and remove identifying details before sharing anything beyond the core research team.
+  </Card>
+  <Card title="Use synthetic data" icon="document">
+    Build prototypes and test scenarios with fictional or synthetic data. Never use real patient records in testing.
+  </Card>
+  <Card title="Report incidents fast" icon="warning">
+    If PHI is accidentally disclosed, report it immediately to your project lead and follow incident response procedures.
+  </Card>
+</CardGrid>
+
+### Device Requirements by Activity
+
+**MUST use a state laptop with our Zero Trust Network Access (ZTNA) gateway active**
+
+All research activities until data is de-identified:
+
+* Managing schedules and participant coordination  
+* Reviewing screener responses from User Interviews  
+* Conducting surveys that collect any participant information  
+* Reading email communications about the research  
+* Conducting and recording research sessions (Teams or Zoom)  
+* Reviewing recordings, transcripts, and notes  
+* De-identifying data (removing names, contact info, PHI)  
+* Organizing research materials in OneDrive/SharePoint  
+* Accessing User Interviews admin panel  
+* Working in Dovetail before data is de-identified
+
+**MAY use NJIA Macbook on secure network**
+
+Only after data is fully de-identified:
+
+* Synthesis in Dovetail (with de-identified data only)  
+* Creating journey maps or workshop materials in Mural  
+* Writing research reports with anonymized findings  
+* Sharing insights in Slack (no names or identifying details)  
+* Drafting research plans and discussion guides
+
+**NEVER use personal devices**
+
+Personal devices cannot be used for any NJIA research activities.
+
+### Tool-by-Tool Guidance
+
+| Tool | Use on a state laptop? | HIPAA-compliant? | What you can do |
+| :---- | :---- | :---- | :---- |
+| Microsoft Teams | Required | Yes (with proper config) | Conduct sessions, record, store recordings in OneDrive |
+| Zoom | Required | Yes (verify BAA first) | Conduct sessions only if Zoom for Healthcare Business Associate Agreement (BAA) confirmed |
+| User Interviews | Required | Verify BAA | Manage screeners, schedule, compensate participants |
+| Dovetail | Required until de-identified | Yes (verify BAA) | Upload recordings, transcribe, analyze after de-identification |
+| OneDrive/ SharePoint | Required | Yes | Store all recordings and identifiable research materials |
+| Mural | NJIA Mac (after de-ID) | No | Synthesis with de-identified data only |
+| Slack | NJIA Mac (after de-ID) | No | Share anonymized findings only, no recordings or names |
+| Google Drive | NJIA Mac (after de-ID) | No | Use OneDrive instead; only de-identified docs if necessary |
+
+### Common Research Scenarios
+
+<Tabs>
+  <TabItem label="Scenario 1: Remote interviews">
+
+  You're testing a workflow tool with nurses and doctors
+
+  - Use state laptop for entire process
+  - Schedule via Teams (preferred) or Zoom for Healthcare (verify BAA)
+  - At start of session: "Please avoid sharing specific patient names, medical record numbers, or detailed health information"
+  - Record to OneDrive/SharePoint via state laptop
+  - If the participant shows a real patient screen: "Could you close that window? We're focusing on the interface, not specific patient data"
+  - Note any PHI disclosures with timestamp
+  - Review recording within 24 hours
+  - De-identify transcript: replace names with P1, P2, etc.
+  - After de-identification: may use NJIA Mac for synthesis
+
+  </TabItem>
+
+  <TabItem label="Scenario 2: Intercept interviews">
+
+  You're observing how people use a service portal on-site
+
+  - Use a state laptop with our Zero Trust Network Access (ZTNA) gateway for the entire process
+  - Before observation: "Please don't share your personal health information or show us real records"
+  - Take notes using participant codes (P1, P2), not names
+  - If someone shows you their real health records: "Thank you, but we're just observing the process, not your personal information"
+  - Do not photograph screens showing real patient data
+  - All notes stay on state laptop until de-identified
+  - After de-identification: may transfer to other tools
+
+  </TabItem>
+
+  <TabItem label="Scenario 3: Usability testing">
+
+  You're testing a new healthcare application
+
+  - Create prototype with synthetic data (fictional names, addresses, dates)
+  - Use state laptop to conduct sessions via Teams
+  - Record to OneDrive via state laptop
+  - If participant mentions real health details: note timestamp, don't include in analysis
+  - Review recording within 24 hours
+  - De-identify transcript
+  - After de-identification: may use NJIA Mac for synthesis
+
+  </TabItem>
+
+  <TabItem label="Scenario 4: Survey">
+
+  You're collecting feedback from healthcare service users
+
+  - Use state laptop to create survey in approved platform (verify BAA)
+  - Design questions to avoid collecting PHI:
+    - ✅ "How easy was it to find the form?"
+    - ❌ "What health condition were you applying for?"
+  - Collect only necessary identifiers (email for follow-up if needed)
+  - Review responses on state laptop only
+  - De-identify before analysis: remove emails, use respondent codes
+  - After de-identification: may use NJIA Mac
+
+  </TabItem>
+
+</Tabs>
+
+### Research Session Checklist
+
+<Steps>
+<ol>
+  <li>
+    <h4 id="before">Before</h4>
+    <ul>
+      <li>On a state laptop with the Zero Trust Network Access (ZTNA) gateway active</li>
+      <li>Using Teams (preferred) or Zoom for Healthcare with confirmed BAA</li>
+      <li>Recording set to save to OneDrive/SharePoint</li>
+      <li>Lobby/waiting room enabled</li>
+      <li>Privacy brief prepared</li>
+      <li>Notetaker (if any) briefed on protocols</li>
+    </ul>
+  </li>
+
+  <li>
+    <h4 id="during">During</h4>
+    <ul>
+      <li>Admit participant from lobby</li>
+      <li>Deliver brief: "Please avoid sharing patient names, medical record numbers, or specific health details"</li>
+      <li>If PHI disclosed or shown on screen: note timestamp</li>
+      <li>Take notes about behaviors and themes, not verbatim PHI</li>
+    </ul>
+  </li>
+
+  <li>
+    <h4 id="after">After</h4>
+    <ul>
+      <li>Review recording within 24 hours for accidental PHI</li>
+      <li>De-identify: replace real names with codes (P1, P2)</li>
+      <li>Remove any PHI from transcript and notes</li>
+      <li>Store de-identified materials appropriately</li>
+      <li>Delete local recordings after upload to OneDrive</li>
+      <li>If PHI was disclosed: complete incident report (see step 4)</li>
+    </ul>
+  </li>
+
+  <li>
+    <h4 id="incident-response-procedures">Incident Response Procedures</h4>
+    <p><strong>If PHI is accidentally disclosed during a session</strong></p>
+    <p>Immediate actions:</p>
+    <ul>
+      <li>Do not panic or make the participant uncomfortable</li>
+      <li>Note the timestamp of when disclosure occurred</li>
+      <li>Continue the session professionally</li>
+      <li>Do not include the PHI in your notes</li>
+    </ul>
+
+    <p>Within 24 hours:</p>
+    <ul>
+      <li>Review the recording and note exactly what was disclosed</li>
+      <li>Mark the section for redaction</li>
+      <li>Complete incident report form (see below)</li>
+      <li>Send to project lead and cc: NJIA tech operations team</li>
+    </ul>
+
+    <p>Follow-up:</p>
+    <ul>
+      <li>Redact the PHI from transcript before any analysis</li>
+      <li>Do not include the PHI in any research outputs</li>
+      <li>Document that redaction occurred in your research notes</li>
+    </ul>
+
+    <p><strong>If identifiable research data is stored in wrong location</strong></p>
+    <p>Examples:</p>
+    <ul>
+      <li>Uploaded non-de-identified transcript to Mural</li>
+      <li>Shared participant name in Slack</li>
+      <li>Saved recording to Google Drive</li>
+      <li>Sent email with screener responses from personal device</li>
+    </ul>
+
+    <p>Immediate actions:</p>
+    <ul>
+      <li>Do not download or view further on unauthorized device</li>
+      <li>Delete from unauthorized location immediately</li>
+      <li>Change any passwords if accessed from non-state device</li>
+      <li>Complete incident report form</li>
+    </ul>
+
+    <p>Within 24 hours:</p>
+    <ul>
+      <li>Send incident report to project lead and NJIA tech operations</li>
+      <li>Document what data was exposed and for how long</li>
+      <li>Follow remediation steps provided by tech operations</li>
+    </ul>
+  </li>
+</ol>
+</Steps>
+
+### De-identification Checklist
+
+Before sharing research materials or moving to other tools:
+
+- [ ]  Replace participant names with codes (P1, P2, P3)  
+- [ ]  Remove patient names mentioned during sessions  
+- [ ]  Remove email addresses, phone numbers  
+- [ ]  Generalize specific locations ("urban county" not "Camden")  
+- [ ]  Remove exact ages over 89 (use "over 89")  
+- [ ]  Remove medical record numbers, insurance IDs  
+- [ ]  Replace specific diagnoses with general terms ("chronic condition")  
+- [ ]  Remove healthcare provider/facility names when not essential  
+- [ ]  Review for other identifiers: dates of birth, SSN, account numbers
+
+After completing this checklist, you may use the NJIA Macbook and share with the team.
+
+### BAA Status Reference
+
+Before using any tool with identifiable research data, verify BAA is in place:
+
+Confirmed with BAA (verify current status with tech ops):
+
+* Microsoft 365 (Teams, OneDrive, SharePoint)  
+* Dovetail Enterprise (verify active)
+
+Verify before use:
+
+* Zoom (requires Zoom for Healthcare \+ signed BAA)  
+* User Interviews (verify BAA on file)  
+* Any new tool not listed here
+
+No BAA \- use only with de-identified data:
+
+* Mural  
+* Slack  
+* Google Drive
+
+### Questions?
+
+Unsure about:
+
+* Device requirements → Default to state laptop  
+* Whether data is identifiable → Ask project lead before proceeding  
+* Tool BAA status → Contact NJIA tech operations before using  
+* What to do after incident → Follow incident response procedures above
+
+Resources:
+
+* [Research Guidance | HHS.gov](https://www.hhs.gov/hipaa/for-professionals/special-topics/research/index.html)  
+* [HIPAA-Compliant User Research Methods | CleverX](https://cleverx.com/guides/hipaa-compliant-user-research-methods-a-complete-guide-for-product-and-ux-teams/)
+
+**When in doubt: use the state laptop, de-identify before sharing, ask before proceeding.**
 
 ---
 
