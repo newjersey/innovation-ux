@@ -35,16 +35,7 @@ export default defineConfig({
 							{ label: 'Plan research', link: 'how-we-work/research/plan/' },
 							{ label: 'Conduct research', link: 'how-we-work/research/conduct/' },
 							{ label: 'Share findings', link: 'how-we-work/research/share-findings/' },
-							{
-								label: 'Resources',
-								items: [
-									{ label: 'Resources overview', link: 'how-we-work/research/resources/' },
-									{ label: '30-minute guide', link: 'how-we-work/research/resources/30-minute-conversation-guide/' },
-									{ label: '60-minute guide', link: 'how-we-work/research/resources/60-minute-conversation-guide/' },
-									{ label: 'Remote research plan', link: 'how-we-work/research/resources/remote-research-plan/' },
-									{ label: 'In-person research plan', link: 'how-we-work/research/resources/in-person-research-plan/' },
-								],
-							},
+							{ label: 'Resources', link: 'how-we-work/research/resources/' },
 							],
 						},
 					],
