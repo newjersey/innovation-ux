@@ -1,33 +1,75 @@
 ---
 title: Research resources
-description: Templates and reference materials for research planning and execution.
+description: What to include in a research plan and a conversation guide, plus where our team keeps its templates.
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Aside, Card, CardGrid, Steps } from '@astrojs/starlight/components';
 
-## Resources
+<p class="lede">Use these outlines to build your own research plans and conversation guides. They reflect what we've found works for small, lean studies.</p>
 
-### Research plan templates
+## Size the study first
+
+<p class="section-intro">Not every study needs a long plan. Check again whenever the method, number of people, or session length changes.</p>
 
 <CardGrid>
-  <LinkCard
-    title="Remote Research Plan"
-    description="For small, lightweight studies conducted remotely via Teams, Zoom, or UserInterviews."
-    href="./remote-research-plan/"
-  />
-  <LinkCard
-    title="In-Person Research Plan"
-    description="For in-person projects like shadowing, intercept interviews, or contextual inquiry."
-    href="./in-person-research-plan/"
-  />
-  <LinkCard
-    title="60-Minute Conversation Guide"
-    description="A structured guide for longer, in-depth research sessions."
-    href="./60-minute-conversation-guide/"
-  />
-  <LinkCard
-    title="30-Minute Conversation Guide"
-    description="A focused guide for shorter, targeted research sessions."
-    href="./30-minute-conversation-guide/"
-  />
+  <Card title="Quick plan" icon="rocket">
+    For small, remote studies with only a few sessions. Fits on one page: the decision, the research question, the method, and who to invite.
+  </Card>
+  <Card title="Full plan" icon="list-format">
+    For in-person research, bigger budgets, or more sessions. Covers the four steps below, plus logistics, data handling, and budget.
+  </Card>
 </CardGrid>
+
+## What a full research plan should cover
+
+<div class="research-steps">
+<Steps>
+
+1. ### Clarity
+
+   The decision the research will inform, who makes it, how big it is, and when it's due. Work your schedule back from that date.
+
+2. ### What we know
+
+   Past studies and findings on the topic. If it's been studied before, say why you still need the research.
+
+3. ### Questions
+
+   The research question, plus goals or hypotheses, each with what would prove it right.
+
+4. ### Approach
+
+   The lightest method that will answer the question, how many people, and a stop rule. For example, stop when two sessions in a row show nothing new. Check in halfway to decide whether to stop early or change course.
+
+</Steps>
+</div>
+
+A full plan also covers:
+
+- **Participants:** who you need, how you'll recruit them, and who you'll exclude, such as people currently in crisis. Write a screener that's hard to fake, and avoid collecting personal or health information you don't need.
+- **Incentives:** one flat per-minute rate for every participant, based on scheduled time. Don't use separate rates for residents and professionals. If the flat rate can't reach a specific group, document why before you offer more.
+- **Consent and data handling:** your consent form, where recordings are stored, who can access them, and when they'll be deleted.
+- **Timeline:** recruiting, a pilot session, sessions, de-identification, synthesis, and sharing. Try to fit it all in a two-week sprint.
+- **Budget:** incentives plus any travel, meals, or supplies.
+- **Risks and considerations:** sensitive topics, privacy, accessibility, digital access, language, and representation.
+- **Approvals:** peer review for every study, plus whoever approves budget and scope in your organization. Don't contact participants until approvals are in.
+
+## How to structure a conversation guide
+
+For most 1:1 interviews, 45 minutes is enough time for rapport, a real walkthrough, and a short prototype check, while keeping participants fresh and focused.
+
+| Section | Time | What happens |
+|---|---|---|
+| Welcome and setup | 5 min | Introductions, purpose, consent to record, and a reminder not to share personal information |
+| Background and context | 10 min | How they use the service today: why, how often, and what frustrates them |
+| Deep dive | 15 min | Walking through a recent experience: pain points, workarounds, and expectations |
+| Prototype or concept feedback | 10 min | First impressions and a think-aloud task, using made-up data only |
+| Wrap-up | 5 min | Final thoughts, what happens next, and how they'll be paid |
+
+Use 30 minutes for a single focused task. Save 60 minutes for co-design, complex services, or sessions with an interpreter.
+
+**Plan ahead for sensitive moments.** Decide what you'll say if someone shares personal information, shows a real record on screen, asks for help with their own case, or gets upset. Offer a break, a skip, or a chance to stop, and pay them either way.
+
+<Aside type="note" title="For our team">
+Our research plan templates and conversation guides (quick and full plans, plus 30-, 45-, and 60-minute guides) are in the [Templates folder on the UX Practice shared drive](https://drive.google.com/drive/folders/1ejHHW5DBlUG2iZgeeNN-8cmE9vxAYw0q). They're only available to people on our team.
+</Aside>

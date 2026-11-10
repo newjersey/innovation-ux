@@ -3,7 +3,9 @@ title: Conduct research
 description: Guidelines for recruiting, communicating, and running research sessions.
 ---
 
-import { Aside, Steps, LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+import { Aside, Steps, LinkCard, Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<p class="lede">Recruit the right people, get informed consent, protect their information, and run every session with care.</p>
 
 ## Recruiting participants
 
@@ -11,20 +13,21 @@ import { Aside, Steps, LinkCard, Card, CardGrid } from '@astrojs/starlight/compo
 **Default rule: always start with UserInterviews.com.** Only move to secondary or tertiary channels when UserInterviews is not a good fit for your study.
 </Aside>
 
+<div class="research-steps">
 <Steps>
 
 1. ### Primary: UserInterviews.com
 
-   Our annual subscription supports up to 150 sessions per year and handles everything in one place: recruitment, screening, scheduling, and communication.
+   A recruiting platform handles everything in one place: recruitment, screening, scheduling, communication, and incentives.
 
    - Use screening criteria when setting up the platform
    - Communicate with participants within the platform to verify their fit for the study
 
-2. ### Secondary: State connections
+2. ### Secondary: Community and partner organizations
 
-   Use when working with a very specific group already engaged with the State — for example, disability advocacy organizations, LGBTQIA+ organizations, community-based organizations, or state program mailing lists.
+   Use when working with a very specific group that's hard to reach otherwise — for example, disability advocacy organizations, LGBTQIA+ organizations, or community-based organizations.
 
-   Working with partners can be time-intensive, so plan ahead. Coordinate screening calls through [research@innovation.nj.gov](mailto:research@innovation.nj.gov).
+   Working with partners can be time-intensive, so plan ahead. Talk with the research team before you contact any partner organization about recruiting.
 
 3. ### Tertiary: Independent and manual methods
 
@@ -39,31 +42,28 @@ import { Aside, Steps, LinkCard, Card, CardGrid } from '@astrojs/starlight/compo
    </Aside>
 
 </Steps>
+</div>
 
 <hr />
 
 ## Communicating with participants
 
-All communication with participants should happen through **UserInterviews.com** — including screeners, and scheduling.
-
-<Aside type="danger" title="Required after every session">
-Mark the participant as **"Completed"** in UserInterviews. If an interaction makes you uncomfortable, end the session, contact UserInterviews support, and do not mark it complete until after investigation.
-</Aside>
+All communication with participants should happen through **UserInterviews.com**, including screeners and scheduling.
 
 ### Informed consent
 
-Participants must complete a consent form before research begins. All consent forms should:
+<p class="section-intro">Participants must complete a consent form before research begins.</p>
+
+Every consent form should:
 
 - Explain the purpose and format of the research
-- Clarify confidentiality (PII will remain private)
+- Clarify confidentiality (personal information stays private)
 - Request consent to record, with an option to participate without recording
+- Explain who can see recordings, how long you keep them, and when they're deleted
+- Explain that any excerpts shared outside the research team will have personal information removed
 - Remind participants they can withdraw or change consent at any time
 
-<a class="external-link" href="https://docs.google.com/forms/d/1yIs4IiVX7RaM8xDZcvd-Blfo64lh6ptg1whqGgCsh-k/edit" title="External Google Form" target="_blank" rel="noopener noreferrer">
-  Informed Consent Form Template <span aria-hidden="true">↗</span>
-</a>
-
-**Duplicate this form and move it to your project's Sensitive Documents folder before publishing.**
+Our team: use the current consent form template in the [Research folder on the shared drive](https://drive.google.com/drive/folders/1CK19sPsEhp1t_Z6627u6tG468ZQnnL8l).
 
 <Aside type="caution" title="Special consent required for">
 - **Minors** — parent or guardian signature required
@@ -74,48 +74,50 @@ Participants must complete a consent form before research begins. All consent fo
 
 ## Collecting and managing data
 
-<Aside type="danger" title="PII must always be stored securely">
-All personally identifiable information must be saved in the project's **Sensitive Documents folder** in Google Drive, with access restricted to the immediate research team only.
+<Aside type="danger" title="Personal information must always be stored securely">
+Store recordings and anything that identifies a participant only in approved, access-restricted storage that only the immediate research team can open. Never use personal devices or personal accounts for research data.
 </Aside>
 
+<div class="research-steps">
 <Steps>
 
 1. ### Store sensitive data
 
-   All PII — names, contact details, recordings, transcripts — must go in the project's Sensitive Documents folder. Never store participant data in general project folders, personal drives, or open shared spaces.
+   All personal information — names, contact details, recordings, transcripts — goes in your project's restricted storage. Never store participant data in general project folders, personal drives, chat tools, or open shared spaces.
 
 2. ### Record sessions
 
-   - **Remote sessions:** Record through Zoom or Teams, integrated via UserInterviews.
-   - **In-person sessions:** Migrate recordings from the recording device to the Sensitive Documents folder promptly.
+   - **Remote sessions:** Record through Zoom or Teams, integrated via UserInterviews. Ask participants to change their display name to a first name, so full names stay out of transcripts.
+   - **In-person sessions:** Move recordings from the recording device to restricted storage promptly, then delete them from the device.
 
-   Always remind participants not to enter, display, or say PII during the session.
+   Always remind participants not to enter, display, or say personal information during the session. If they do, note the timestamp so you can remove it later.
 
 3. ### Handle accidental PII capture
 
-   If PII is accidentally captured in a recording:
-   - Sanitize the file by removing the PII
-   - Destroy the original recording containing raw PII
-   - Retain only the sanitized version
+   If personal information is accidentally captured in a recording:
+   - Review the recording soon after the session (within 24 hours for health-related studies)
+   - Remove or redact the personal information before analysis or sharing
+   - Keep only the de-identified version for synthesis, and delete the original on your retention schedule
 
 4. ### Prepare recordings for synthesis
 
-   Remove all PII before uploading to Dovetail. Useful tools:
+   De-identify recordings and transcripts before synthesis: replace names with participant codes (P1, P2) and remove personal details. Useful tools:
    - **Clipchamp** — Microsoft's web-based video editor for trimming audio and video
    - **Windows Voice Recorder** — built-in tool for recording and trimming audio
 
 5. ### Share findings responsibly
 
-   Share themes, insights, and anonymized quotes only. Never share full recordings, transcripts, or participant names outside the research team.
+   Share themes, insights, and de-identified quotes only. Never share full recordings, transcripts, or participant names outside the research team, and never share public links to research data.
 
 </Steps>
+</div>
 
 <hr />
 
 ## Conducting interviews
 
-### Before the session
-
+<Tabs>
+<TabItem label="Before">
 Begin every session by setting expectations and building trust:
 
 - Introduce yourself and your role
@@ -125,11 +127,11 @@ Begin every session by setting expectations and building trust:
 - Ask if they need any accommodations
 
 <Aside type="note" title="When observers are present">
-Acknowledge that others may be on the call, then reassure the participant: *"You may notice some other names on the call. They're here to quietly observe or take notes — today's session is really just between you and me."
+Acknowledge that others may be on the call, then reassure the participant: *"You may notice some other names on the call. They're here to quietly observe or take notes — today's session is really just between you and me."*
 </Aside>
-
-### Asking good questions
-
+</TabItem>
+<TabItem label="During">
+<div class="compact-cards">
 <CardGrid>
   <Card title="One question at a time" icon="approve-check-circle">
     Avoid double-barreled questions. Ask about one thing, get a response, then move on.
@@ -144,19 +146,27 @@ Acknowledge that others may be on the call, then reassure the participant: *"You
     Mirror the terms participants use instead of imposing jargon or internal terminology.
   </Card>
 </CardGrid>
-
-### Observer ground rules
-
-<Aside type="note">
+</div>
+</TabItem>
+<TabItem label="Observers">
 - Stay **off camera** and **on mute** at all times
 - Do **not** use chat during the session
 - Change your display name to **Notetaker** or **Observer**
 - Your role is to listen — let the facilitator lead
-</Aside>
-
-### Ending the session
-
+</TabItem>
+<TabItem label="Ending">
 - Ask if participants have any final thoughts
 - Thank them sincerely for their time and input
-- Ask if they'd be open to participating in future research
 - Share next steps — how findings may be used or when they might hear from you
+- If they opted in to future research through your recruiting platform, let them know they may hear from you again. Don't recruit them for future studies directly.
+</TabItem>
+<TabItem label="After">
+<Aside type="danger" title="Required after every session">
+Mark the participant as **"Completed"** in UserInterviews. If an interaction makes you uncomfortable, end the session, contact UserInterviews support, and do not mark it complete until after investigation.
+</Aside>
+
+- Review the recording for personal information (within 24 hours for health-related studies)
+- De-identify, then upload to your research repository
+- Debrief with your notetaker
+</TabItem>
+</Tabs>
