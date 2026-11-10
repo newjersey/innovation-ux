@@ -5,15 +5,18 @@ description: Guidance for synthesizing, reporting, and sharing research findings
 
 import { Aside, Tabs, TabItem, Steps, Card, CardGrid } from '@astrojs/starlight/components';
 
+<p class="lede">Research is only valuable if it's shared. Synthesize in one place, then turn evidence into insights people can act on.</p>
+
 ## Synthesizing research
 
-All synthesis happens in **Dovetail** — our single source of truth. Do not synthesize in private notes, whiteboards, or personal documents.
+<p class="section-intro">All synthesis happens in <strong>Dovetail</strong>, our single source of truth. Don't synthesize in private notes, whiteboards, or personal documents.</p>
 
+<div class="research-steps">
 <Steps>
 
 1. ### Import your materials
 
-   Upload sanitized transcripts, notes, and media into Dovetail. Only upload files with PII already removed.
+   Upload transcripts, notes, and media into Dovetail, following your team's data-handling rules. Replace participant names with codes, and remove or redact personal information before synthesis.
 
 2. ### Highlight and tag
 
@@ -32,14 +35,13 @@ All synthesis happens in **Dovetail** — our single source of truth. Do not syn
    Make sure your interpretation isn't overly shaped by your own assumptions or a single participant's story.
 
 </Steps>
+</div>
 
 <hr />
 
 ## Sharing research
 
-<Aside type="tip">
-Research is only valuable if it's shared. Balance clarity, respect for participants, and impact in every output.
-</Aside>
+<p class="section-intro">Balance clarity, respect for participants, and impact in every output.</p>
 
 Every research output should include:
 
@@ -51,6 +53,7 @@ Every research output should include:
 
 ### Output formats
 
+<div class="compact-cards">
 <CardGrid>
   <Card title="Insight summaries" icon="document">
     One-page briefs highlighting key findings and recommendations. Can be created and shared directly through Dovetail.
@@ -65,6 +68,7 @@ Every research output should include:
     Detailed documentation for complex projects or cross-agency work where depth is needed.
   </Card>
 </CardGrid>
+</div>
 
 <Aside type="note" title="Accessibility matters">
 Keep all presentations and reports screen-reader friendly. Use clear, high-contrast visuals, provide alt text for images and diagrams, and write summaries in plain language for diverse audiences.
@@ -74,6 +78,7 @@ Keep all presentations and reports screen-reader friendly. Use clear, high-contr
 
 ## Tools we use
 
+<div class="cols-3 compact-cards">
 <CardGrid>
   <Card title="UserInterviews" icon="heart">
     Recruitment, scheduling, and participant communication.
@@ -81,8 +86,8 @@ Keep all presentations and reports screen-reader friendly. Use clear, high-contr
   <Card title="Zoom / Teams" icon="laptop">
     Session facilitation and recording, integrated via UserInterviews.
   </Card>
-  <Card title="Google Drive" icon="document">
-    Secure storage for raw recordings and PII in Sensitive Documents folders.
+  <Card title="Restricted storage" icon="document">
+    Approved, access-restricted storage for raw recordings and anything that identifies a participant.
   </Card>
   <Card title="Dovetail" icon="open-book">
     Central repository for transcripts, notes, tags, and synthesis.
@@ -91,9 +96,10 @@ Keep all presentations and reports screen-reader friendly. Use clear, high-contr
     Standard template for informed consent forms.
   </Card>
   <Card title="Clipchamp" icon="setting">
-    Trim and edit audio and video to remove PII before uploading to Dovetail.
+    Trim and edit audio and video to remove personal information before sharing clips.
   </Card>
 </CardGrid>
+</div>
 
 <hr />
 
@@ -119,13 +125,14 @@ Keep all presentations and reports screen-reader friendly. Use clear, high-contr
     - Respect time and use silence wisely
 </TabItem>
 <TabItem label="After session">
-    - Sanitize recordings by removing PII
-    - Upload sanitized media to Dovetail
-    - Destroy any originals containing PII
+    - Review the recording for personal information (within 24 hours for health-related studies)
+    - Replace names with participant codes, and redact or remove personal details
+    - Keep originals only in restricted storage, and delete them on your retention schedule
     - Mark session as **Completed** in UserInterviews
 </TabItem>
 <TabItem label="When sharing">
-    - Share themes, insights, and anonymized quotes only
+    - Share themes, insights, and de-identified quotes only
+    - Never share public links to research data
     - Use participant language to keep findings authentic
     - Tailor the format (summary, deck, map) to your audience
     - Make reports accessible — clear visuals, alt text, plain language
