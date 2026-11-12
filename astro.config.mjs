@@ -9,7 +9,14 @@ export default defineConfig({
 	base: "/innovation-ux",
 	integrations: [
 		starlight({
-			title: 'NJIA UX',
+			title: 'NJ Innovation Authority UX',
+			head: [
+				{ tag: 'meta', attrs: { property: 'og:image', content: 'https://newjersey.github.io/innovation-ux/og-image.png' } },
+				{ tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
+				{ tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
+				{ tag: 'meta', attrs: { property: 'og:image:alt', content: 'New Jersey Innovation Authority UX Practice Wiki: how we research, design, and write for New Jersey\'s public services' } },
+				{ tag: 'meta', attrs: { name: 'twitter:image', content: 'https://newjersey.github.io/innovation-ux/og-image.png' } },
+			],
 			plugins: [starlightLinksValidator({ errorOnRelativeLinks: false })],
 			customCss: [
 				"./src/styles/custom.css",
