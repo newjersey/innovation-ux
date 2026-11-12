@@ -34,6 +34,7 @@ export default defineConfig({
 							{ label: 'Overview', link: 'how-we-work/research/' },
 							{ label: 'Plan research', link: 'how-we-work/research/plan/' },
 							{ label: 'Conduct research', link: 'how-we-work/research/conduct/' },
+							{ label: 'Can we pay this participant?', link: 'how-we-work/research/can-we-pay/' },
 							{ label: 'Share findings', link: 'how-we-work/research/share-findings/' },
 							{ label: 'Resources', link: 'how-we-work/research/resources/' },
 							],

@@ -1,0 +1,213 @@
+---
+// "Can we pay this participant?" — a short yes/no decision helper.
+// The rules live in STEPS and RESULTS below. Edit them there; the markup is generated.
+const STEPS = [
+  {
+    id: 'unpaid-activity',
+    question: 'Is this a survey, or a self-guided test that takes 5 minutes or less?',
+    hint: 'Screeners, screening calls, and consent forms also count here.',
+    yes: 'unpaid-activity',
+  },
+  {
+    id: 'job',
+    question: 'Are they talking with you as part of their job?',
+    hint: 'Ask yourself: are they already being paid for the time they spend with you? For example, a non-profit provider describing the people they serve, an academic expert, a colleague in another government office, or call center staff you observe at work.',
+    yes: 'job',
+  },
+  {
+    id: 'state',
+    question: 'Do they work for the State?',
+    hint: 'Any State agency, not just the one you’re working with.',
+    yes: 'no-pay',
+  },
+  {
+    id: 'household',
+    question: 'Does anyone in their household work for your organization?',
+    hint: 'Include your research team and any partner organization that pays participants for you.',
+    yes: 'no-pay',
+  },
+  {
+    id: 'review',
+    question: 'Does any of these apply?',
+    hint: 'They or their employer supply goods or services to the agency you’re studying · They work for a county or town on the service you’re studying · You’ve paid them for research in the last 3 months',
+    yes: 'review',
+  },
+];
+
+const RESULTS = {
+  'unpaid-activity': {
+    tone: 'neutral',
+    title: 'No payment for this activity',
+    body: [
+      'Surveys, short self-guided tests, screeners, and consent forms aren’t paid.',
+      'If they go on to a longer session, check again for that session.',
+    ],
+  },
+  job: {
+    tone: 'neutral',
+    title: 'Don’t pay them',
+    body: [
+      'People who talk with you in a professional capacity or as part of their official duties aren’t paid for research. Their time is already paid for.',
+      'Thank them, and share what you learned if it’s useful to them.',
+    ],
+  },
+  'no-pay': {
+    tone: 'caution',
+    title: 'They can take part, but you can’t pay them',
+    body: [
+      'State ethics rules mean you can’t pay them. Welcome them to the study, and tell them before they book that there’s no payment.',
+      'Don’t offer anything else in place of payment.',
+    ],
+  },
+  review: {
+    tone: 'caution',
+    title: 'Review before they book',
+    body: [
+      'Decide whether to pay them, and write down your decision and the reason in your study tracker.',
+      'Exceptions are possible in limited circumstances. If you’re not sure, ask your director before they book.',
+    ],
+  },
+  pay: {
+    tone: 'success',
+    title: 'Yes, pay them',
+    body: [
+      'Pay the flat per-minute rate for the scheduled time, the same rate as everyone else.',
+      'Pay in full if the session ends early, if they stop partway, or if it can’t happen because of a problem on your side. Payment never depends on what they say.',
+      'Pay the same day if you can, and within 2 business days at most.',
+    ],
+  },
+};
+const total = STEPS.length;
+---
+
+<div class="pay-checker not-content" data-pay-checker>
+  <noscript>
+    <p>This checker needs JavaScript. The rules, in order:</p>
+    <ol>
+      {STEPS.map((s) => <li><strong>{s.question}</strong> If yes: {RESULTS[s.yes].title.toLowerCase()}.</li>)}
+      <li>If none apply: {RESULTS.pay.title.toLowerCase()}.</li>
+    </ol>
+  </noscript>
+
+  {STEPS.map((s, i) => (
+    <section class="pc-step" data-step={i} data-yes={s.yes} hidden aria-labelledby={`pc-q-${s.id}`}>
+      <p class="pc-progress">Question {i + 1} of {total}</p>
+      <h3 class="pc-question" id={`pc-q-${s.id}`} tabindex="-1">{s.question}</h3>
+      <div class="pc-hint">{s.hint.includes(' · ')
+        ? <ul>{s.hint.split(' · ').map((h) => <li>{h}</li>)}</ul>
+        : <p>{s.hint}</p>}</div>
+      <div class="pc-actions">
+        <button type="button" class="pc-btn" data-answer="yes">Yes</button>
+        <button type="button" class="pc-btn" data-answer="no">No</button>
+      </div>
+    </section>
+  ))}
+
+  {Object.entries(RESULTS).map(([key, r]) => (
+    <section class={`pc-result pc-${r.tone}`} data-result={key} hidden aria-labelledby={`pc-r-${key}`}>
+      <p class="pc-progress">Result</p>
+      <h3 class="pc-question" id={`pc-r-${key}`} tabindex="-1">{r.title}</h3>
+      {r.body.map((b) => <p>{b}</p>)}
+    </section>
+  ))}
+
+  <div class="pc-nav" hidden>
+    <button type="button" class="pc-link" data-back>← Back</button>
+    <button type="button" class="pc-link" data-restart>Start over</button>
+  </div>
+  <p class="pc-sr" aria-live="polite" data-live></p>
+</div>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-pay-checker]')) {
+    const steps = [...root.querySelectorAll<HTMLElement>('.pc-step')];
+    const results = [...root.querySelectorAll<HTMLElement>('.pc-result')];
+    const nav = root.querySelector<HTMLElement>('.pc-nav')!;
+    const back = root.querySelector<HTMLButtonElement>('[data-back]')!;
+    const live = root.querySelector<HTMLElement>('[data-live]')!;
+    const history: string[] = []; // "s0", "s1", … or "r:key"
+
+    const show = (id: string, focus = true) => {
+      [...steps, ...results].forEach((el) => (el.hidden = true));
+      const el = id.startsWith('r:')
+        ? results.find((r) => r.dataset.result === id.slice(2))!
+        : steps[Number(id.slice(1))];
+      el.hidden = false;
+      nav.hidden = history.length === 0;
+      back.hidden = history.length === 0;
+      const heading = el.querySelector<HTMLElement>('.pc-question')!;
+      live.textContent = id.startsWith('r:') ? `Result: ${heading.textContent}` : '';
+      if (focus) heading.focus();
+    };
+    let current = 's0';
+
+    root.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('button');
+      if (!btn) return;
+      if (btn.dataset.answer) {
+        const step = btn.closest<HTMLElement>('.pc-step')!;
+        const i = Number(step.dataset.step);
+        const next = btn.dataset.answer === 'yes' ? `r:${step.dataset.yes}`
+          : i + 1 < steps.length ? `s${i + 1}` : 'r:pay';
+        history.push(current); current = next; show(next);
+      } else if (btn.hasAttribute('data-back') && history.length) {
+        current = history.pop()!; show(current);
+      } else if (btn.hasAttribute('data-restart')) {
+        history.length = 0; current = 's0'; show(current);
+      }
+    });
+    show('s0', false);
+  }
+</script>
+
+<style>
+  .pay-checker {
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin-block: 1.5rem;
+    background: var(--sl-color-bg-nav);
+    max-width: 42rem;
+  }
+  .pc-progress {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    margin: 0 0 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .pc-question {
+    font-size: var(--sl-text-h4);
+    color: var(--sl-color-white);
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+  }
+  .pc-question:focus { outline: none; }
+  .pc-question:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 4px; }
+  .pc-hint p, .pc-hint li, .pc-result p { color: var(--sl-color-gray-2); margin: 0 0 0.75rem; }
+  .pc-hint ul { margin: 0.25rem 0 0; padding-inline-start: 1.25rem; }
+  .pc-actions { display: flex; gap: 0.75rem; margin-top: 1rem; }
+  .pc-btn {
+    min-width: 6rem;
+    padding: 0.6rem 1.25rem;
+    font: inherit;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: 1px solid var(--sl-color-accent);
+    background: transparent;
+    color: var(--sl-color-white);
+    cursor: pointer;
+  }
+  .pc-btn:hover { background: var(--sl-color-accent-low); }
+  .pc-btn:focus-visible, .pc-link:focus-visible { outline: 2px solid var(--sl-color-accent-high); outline-offset: 2px; }
+  .pc-result { border-inline-start: 4px solid var(--sl-color-gray-4); padding-inline-start: 1rem; }
+  .pc-success { border-color: var(--sl-color-green); }
+  .pc-caution { border-color: var(--sl-color-orange); }
+  .pc-nav { display: flex; gap: 1.25rem; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--sl-color-gray-5); }
+  .pc-nav[hidden], .pc-link[hidden] { display: none; }
+  .pc-link {
+    background: none; border: 0; padding: 0; font: inherit;
+    color: var(--sl-color-text-accent); text-decoration: underline; cursor: pointer;
+  }
+  .pc-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
