@@ -76,7 +76,9 @@
   transform: translateY(0);
 }
 
-code {
+/* Plain code blocks only. Inline `code` keeps Starlight's default styling,
+   and Expressive Code blocks (pre[data-language]) keep their own. */
+.sl-markdown-content pre:not([data-language]) > code {
   display: block;
   white-space: pre-wrap;
   background: rgba(255,255,255,0.05);
